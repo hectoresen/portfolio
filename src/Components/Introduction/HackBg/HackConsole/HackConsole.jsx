@@ -1,0 +1,74 @@
+import React, { useEffect, useState } from 'react';
+import { useTypewriter, Cursor } from 'react-simple-typewriter'
+import './HackConsole.scss';
+
+const ConsoleHook = () => {
+    const { text } = useTypewriter({
+        words: ['CV', 'ABOUT', 'PROJECTS'],
+        loop: 6,
+        // typeSpeed: 20,
+    });
+    return (
+        <div className='introduction__name'>
+            <p style={{color: 'orange'}}>{text}</p>
+        </div>
+    )
+};
+
+const HackConsole = () => {
+    const [consoleValue, setConsoleValue] = useState('');
+
+    const items = [
+        {id: 1, name: 'cv'},
+        {id: 2, name: 'about'},
+        {id: 3, name: 'projects'}
+    ]
+
+    useEffect(() =>{
+        const consoleInput = document.getElementById('hackconsole__input');
+        consoleInput.addEventListener('keypress', function(event) {
+            if(event.key === 'Enter'){
+                event.preventDefault();
+                setConsoleValue(consoleInput.value)
+            }
+        })
+    });
+
+    const getHackPortfolio = () =>{
+        const getItem = items.find(element => element.name.toLowerCase() === consoleValue.toLowerCase());
+
+        if(getItem){
+            if(getItem.name === 'about'){
+                return document.getElementById('about').scrollIntoView({behavior: 'smooth'});
+            }else if(getItem.name === 'cv'){
+                return document.getElementById('cv').scrollIntoView({behavior: 'smooth'});
+            }else if(getItem.name === 'projects'){
+                return document.getElementById('projects').scrollIntoView({behavior: 'smooth'});
+            }
+        }else{
+            return;
+        }
+
+    }
+
+    return (
+        <div className='hackconsole'>
+            <div className='hackconsole__header'>
+                <p>You can try typing...</p>
+                <ConsoleHook />
+            </div>
+            <div className='hackconsole__console'>
+                <p><Cursor /></p><input
+                                    className='hackconsole__input'
+                                    id='hackconsole__input'
+                                    >
+                                </input>
+            </div>
+            <div className='hackconsole__portfolio'>
+                {getHackPortfolio()}
+            </div>
+        </div>
+    )
+}
+
+export default HackConsole

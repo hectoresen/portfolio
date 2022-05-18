@@ -1,0 +1,29 @@
+.hackconsole{
+    border: 1px solid white;
+    padding: 1%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &__header{
+        display: flex;
+    }
+    &__console{
+        margin-top: 2%;
+        display: flex;
+        justify-content: center;
+    }
+    &__input{
+        font-size: 1.1rem;
+        color: lime;
+        outline: none;
+        background: none;
+        border: none;
+        width: 80%;
+        text-transform: uppercase;
+    }
+    &__portfolio{
+        margin-top: 5%;
+    }
+}
