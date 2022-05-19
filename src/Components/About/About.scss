@@ -5,9 +5,49 @@
     justify-content: center;
     align-items: center;
     &__container{
+        font-size: 1.4rem;
+        width: 80%;
         height: 50vh;
         border-radius: 2px;
-        border: 1px solid white;
         color: white;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        &-me{
+            width: 60%;
+            p {
+                margin-top: 5%;
+            }
+
+        }
+        &-socials{
+            a{
+                color: white;
+                text-decoration: none;
+            }
+            & ul{
+                display: flex;
+                justify-content: space-around;
+                margin-top: 25%;
+                list-style: none;
+                li:nth-child(2), li:nth-child(3){
+                    margin-left: 20px;
+                }
+                a:hover{
+                    transition: 0.3s;
+                    cursor: pointer;
+                    color: orange;
+                }
+            }
+        }
     }
+};
+
+
+@media screen and (max-width: 480px){
+    .about__container{
+        font-size: 0.9rem;
+    }
+
 }
