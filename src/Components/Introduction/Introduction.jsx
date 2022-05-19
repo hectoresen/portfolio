@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import { HackBgContext } from '../../Shared/Contexts/BgContext';
 import HackBg from './HackBg/HackBg';
@@ -21,6 +21,11 @@ const NameHook = () => {
 
 
 const Introduction = () => {
+
+    const goToAbout = () =>{
+        return document.getElementById('about').scrollIntoView({behavior: 'smooth'});
+    };
+
     const [{activeHackBg}, toggleHackBg] = useContext(HackBgContext);
 
     return (
@@ -31,7 +36,7 @@ const Introduction = () => {
             </div>
             <Photo/>
             <div className='introduction__btn'>
-                <a href="#about" className="animated-button2">
+                <a /* href="#about" */ onClick={goToAbout} className="animated-button2">
                     <span></span>
                     <span></span>
                     <span></span>
