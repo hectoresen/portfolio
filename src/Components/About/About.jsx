@@ -1,12 +1,17 @@
 import React from 'react';
 import {BsGithub, BsLinkedin} from 'react-icons/bs';
 import {AiOutlineMail} from 'react-icons/ai';
+import {BsArrowDownSquare} from 'react-icons/bs';
 import './About.scss';
 
 const About = () => {
+    const goToCv = () =>{
+        return document.getElementById('cv').scrollIntoView({behavior: 'smooth'});
+    };
+
     return (
         <div className='about' id='about'>
-            <div className='about__container '>
+            <div className='about__container'>
                 <div className='about__container-me'>
                     <h2>About me:</h2>
                     <p>
@@ -31,6 +36,7 @@ const About = () => {
                         <li><a href='mailto: inforeshector@gmail.com'><AiOutlineMail/> EMAIL</a></li>
                     </ul>
                 </div>
+                    <p className='about__container-cvicon' onClick={goToCv}><BsArrowDownSquare /></p>
             </div>
         </div>
     )
