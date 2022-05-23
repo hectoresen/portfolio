@@ -39,7 +39,7 @@ const Projects = () => {
             </div>
             <div className='card-info'>
               <div className='info-para'>12 day personal challenge, <span style={{color: 'orange'}}>MongoDB, Express, React, Node</span></div>
-              <button className='card-btn'>Find More</button>
+              <button className='card-btn'><a href="https://github.com/hectoresen/intranet" target='_blank'>See more</a></button>
             </div>
           </div>
 

@@ -1,5 +1,6 @@
 .projects {
     width: 100%;
+    scroll-snap-align: center;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -24,8 +25,8 @@ body {
     position: relative;
     padding: 45px;
     box-sizing: border-box;
-    width: 290px;
-    height: 450px;
+    width: 310px;
+    height: 490px;
     background-image: url('https://media.discordapp.net/attachments/964479986855706624/977520673171841054/zarando1.JPG?width=426&height=676');
     background-position: center;
     background-size: cover;
@@ -34,9 +35,13 @@ body {
     align-items: center;
     justify-content: center;
     transition: 0.3s ease;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(255,255,255,1);
+    box-shadow: 0px 0px 5px 0px rgba(255,255,255,1);
+    border-radius: 2px;
 
     &:hover {
-        background-position-y: 10%;
+        background-position-y: 20%;
         filter: drop-shadow(-9px 16px 0px #343331);
         cursor: pointer;
     }
@@ -73,7 +78,7 @@ body {
 
         .heading {
             font-size: 35px;
-            text-shadow: 3px 10px 14px #151515
+            text-shadow: 3px 10px 14px #151515;
         }
 
         .para {
@@ -153,21 +158,23 @@ body {
 }
 
 .card-box:nth-child(3) {
-    background-image: url('https://media.discordapp.net/attachments/964479986855706624/977878588466536508/Captura.JPG');
+    background-image: url('https://media.discordapp.net/attachments/964479986855706624/977879078688423986/Captura.JPG?width=866&height=676');
+    background-position: center;
+    background-size: cover;
 
     &:hover>.card-text {
         top: 0;
         width: 100%;
         text-shadow: 5px 5px 10px rgba(36, 35, 35, 0.13);
-        background-color: #0e9b06;
+        background-color: #c06200;
 
     }
 
     .card-info>button {
-        background-color: #0e9b06;
+        background-color: #ff8107;
 
         &:hover {
-            background-color: #0b7604;
+            background-color: #c06200;
         }
     }
 }
