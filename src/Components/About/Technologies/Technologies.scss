@@ -3,4 +3,34 @@
     justify-content: center;
     align-items: center;
     color: white;
+    &__icons{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        &__icon{
+            width: 150px;
+            height: 150px;
+            -moz-border-radius: 50%;
+            margin-left: 10px;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: -0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.45),
+            inset -0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
+        }
+    }
+}
+
+.html{
+    background-image: url('https://media.discordapp.net/attachments/964479986855706624/979814194511773756/kisspng-responsive-web-design-html-computer-icons-css3-wor-css-5ada2556b56739.2541863015242458467431.png');
+    background-size:60%;
+}
+.css{
+    background-image: url('https://media.discordapp.net/attachments/964479986855706624/979815579957489705/kisspng-web-development-cascading-style-sheets-css3-comput-css-5ada20be5eed10.7390827615242446703888.png?width=676&height=676');
+    background-size:70%;
+}
+.js{
+    background-image: url('https://media.discordapp.net/attachments/964479986855706624/979816266275635200/kisspng-javascript-portable-network-graphics-logo-clip-art-javascript-programs-amp-output-apps-on-google-5b69409b183213.5468079715336244750991.png');
+    background-size:70%;
 }
