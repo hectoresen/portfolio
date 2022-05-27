@@ -4,7 +4,11 @@ import './Technologies.scss';
 const Technologies = () => {
   return (
     <div className='technologies'>
-      <p>HOLA</p>
+      <div className='technologies__icons'>
+        <div className='technologies__icons__icon html'>HTML</div>
+        <div className='technologies__icons__icon css'>CSS3</div>
+        <div className='technologies__icons__icon js'>JS</div>
+      </div>
     </div>
   )
 }

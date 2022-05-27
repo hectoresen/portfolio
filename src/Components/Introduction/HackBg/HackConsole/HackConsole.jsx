@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
+import { HackBgContext } from '../../../../Shared/Contexts/BgContext';
 import './HackConsole.scss';
 
 const ConsoleHook = () => {
@@ -17,6 +18,7 @@ const ConsoleHook = () => {
 
 const HackConsole = () => {
     const [consoleValue, setConsoleValue] = useState('');
+    const [{activeHackBg}, toggleHackBg] = useContext(HackBgContext);
 
     const items = [
         {id: 1, name: 'cv'},
@@ -32,6 +34,15 @@ const HackConsole = () => {
                 setConsoleValue(consoleInput.value)
             }
         })
+    });
+
+    useEffect(() =>{
+        document.onkeydown = function(e){
+            console.log(e.key);
+            if(e.key === 'Escape'){
+                toggleHackBg();
+            }
+        }
     });
 
     const getHackPortfolio = () =>{
