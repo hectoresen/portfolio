@@ -4,33 +4,131 @@
     align-items: center;
     color: white;
     &__icons{
-        width: 100%;
+        width: 75%;
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
+        &-icon{
+            display: flex;
+            justify-content: center;
+            width: 20%;
+            margin: 5%;
+        }
         &__icon{
             width: 150px;
             height: 150px;
             -moz-border-radius: 50%;
-            margin-left: 10px;
             -webkit-border-radius: 50%;
             border-radius: 50%;
+            text-transform: uppercase;
             background-position: center;
             background-repeat: no-repeat;
             box-shadow: -0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.45),
             inset -0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
         }
+        &__icon:hover{
+            cursor: pointer;
+        }
     }
 }
+
+@media screen and (max-width: 480px){
+    .technologies{
+        &__icons{
+            &-icon{
+                margin-top: 10%;
+                width: 40%;
+            }
+        }
+    }
+};
 
 .html{
     background-image: url('https://media.discordapp.net/attachments/964479986855706624/979814194511773756/kisspng-responsive-web-design-html-computer-icons-css3-wor-css-5ada2556b56739.2541863015242458467431.png');
     background-size:60%;
 }
+.html:hover{
+    box-shadow: -0.5rem 0.5rem 1rem rgb(255, 115, 1),
+    inset -0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
+}
 .css{
     background-image: url('https://media.discordapp.net/attachments/964479986855706624/979815579957489705/kisspng-web-development-cascading-style-sheets-css3-comput-css-5ada20be5eed10.7390827615242446703888.png?width=676&height=676');
     background-size:70%;
 }
+.css:hover{
+    box-shadow: -0.5rem 0.5rem 1rem #039BE5,
+    inset -0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
+}
+
+.sass{
+    background-image: url('https://media.discordapp.net/attachments/964479986855706624/980755994374180934/kisspng-logo-scalable-vector-graphics-computer-icons-porta-sass-logos-download-5c59c780d82aa0.0178421215493876488854.png?width=785&height=587');
+    background-size:70%;
+}
+.sass:hover{
+    box-shadow: -0.5rem 0.5rem 1rem #CF649A,
+    inset -0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
+}
+
 .js{
     background-image: url('https://media.discordapp.net/attachments/964479986855706624/979816266275635200/kisspng-javascript-portable-network-graphics-logo-clip-art-javascript-programs-amp-output-apps-on-google-5b69409b183213.5468079715336244750991.png');
     background-size:70%;
+}
+.js:hover{
+    box-shadow: -0.5rem 0.5rem 1rem #FFDA3E,
+    inset -0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
+}
+
+.react{
+    background-image: url('https://media.discordapp.net/attachments/964479986855706624/980756695548575744/kisspng-react-business-javascript-computer-software-npm-react-5b2dd02b688437.5188897215297290674281.png');
+    background-size: 90%;
+}
+.react:hover{
+    box-shadow: -0.5rem 0.5rem 1rem #57C2E2,
+    inset -0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
+}
+
+.angular{
+    background-image: url('https://media.discordapp.net/attachments/964479986855706624/980757086000541726/kisspng-angularjs-rxjs-angular-november-meetup-javascript-building-applications-with-angular-material-genu-5bf28bff4df5f6.2092311215426222073193.png');
+    background-size: 75%;
+}
+.angular:hover{
+    box-shadow: -0.5rem 0.5rem 1rem #E51436,
+    inset -0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
+}
+
+.node{
+    background-image: url('https://media.discordapp.net/attachments/964479986855706624/980759399305986048/kisspng-node-js-javascript-software-developer-express-js-c-node-js-5b4bc172b6aa80.4777337515316913787482.png');
+    background-size: 90%;
+}
+.node:hover{
+    box-shadow: -0.5rem 0.5rem 1rem #72BC56,
+    inset -0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
+}
+
+.mongodb{
+    background-image: url('https://media.discordapp.net/attachments/964479986855706624/980760407797035008/kisspng-mongodb-nosql-document-oriented-database-portable-thessaloniki-mongodb-user-group-thessaloniki-g-5b639f0975a398.5970418615332554334819.png');
+    background-size: 65%;
+}
+.mongodb:hover{
+    box-shadow: -0.5rem 0.5rem 1rem #604024,
+    inset -0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
+}
+
+
+.npm{
+    background-image: url('https://media.discordapp.net/attachments/964479986855706624/980761026666569738/kisspng-npm-node-js-computer-icons-computer-software-insta-5b278c9a7f3538.4925424915293185545211.png?width=649&height=649');
+    background-size: 80%;
+}
+.npm:hover{
+    box-shadow: -0.5rem 0.5rem 1rem #D50000,
+    inset -0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
+}
+
+.git{
+    background-image: url('https://media.discordapp.net/attachments/964479986855706624/980761985039867904/kisspng-git-repository-merge-commit-computer-file-git-blamer-visual-studio-marketplace-5c522814af3fb6.1559490815488880847178.png?width=649&height=649');
+    background-size: 90%;
+}
+.git:hover{
+    box-shadow: -0.5rem 0.5rem 1rem #F05032,
+    inset -0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
 }
