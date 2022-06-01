@@ -10,171 +10,152 @@
         height: 50vh;
         color: white;
     }
+    a {
+        text-decoration: none;
+    }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-$anton: 'Anton', sans-serif;
-
-body {
-    background: #111111;
+:root {
+    --bg-shape-color: linear-gradient(120deg, #343A4F, #0F1620);
+    --lightblue: #3D9DEA;
+    --darkblue: #4A4EEE;
+    --text-color: #D5E1EF;
 }
 
-.card-box {
-
+.wrapper {
+    width: 350px;
+    border-radius: 40px;
+    background-image: var(--bg-shape-color);
     overflow: hidden;
-    position: relative;
-    padding: 45px;
-    box-sizing: border-box;
-    width: 310px;
-    height: 490px;
-    background-image: url('https://media.discordapp.net/attachments/964479986855706624/977520673171841054/zarando1.JPG?width=426&height=676');
-    background-position: center;
-    background-size: cover;
+}
+
+.overviewInfo,
+.productSpecifications {
+    padding: 24px;
+}
+
+.overviewInfo {
+    /* background-image: linear-gradient(176deg, var(--lightblue), var(--darkblue)); */
+    background-image: url('https://media.discordapp.net/attachments/964479986855706624/977877243269361724/upgradefly.JPG?width=715&height=649');
+    background-size: 100%;
+}
+
+
+.neurobutton {
+    background-image: var(--bg-shape-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 3px 4px 5px 0px rgba(197, 197, 197, 0.1), inset 3px 6px 6px 5px rgba(78, 77, 77, 0.1), -2px -2px 8px 2px rgba(255, 255, 255, 0.1), 2px 2px 6px 3px rgba(0, 0, 0, 0.4);
+}
+
+.productinfo {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    min-height: 200px;
+    margin-bottom: 50px;
+}
+
+.grouptext {
+    h3 {
+        letter-spacing: 3.2px;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 8px;
+    }
+
+    p {
+        font-size: 12px;
+        opacity: 0.8;
+    }
+
+}
+
+/* product specifications */
+.featureIcon {
+    width: 40px;
+    height: 40px;
+/*     background-image: var(--bg-shape-color); */
+    border-radius: 8px;
+    margin-right: 16px;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.productSpecifications {
+
+    h1 {
+        color: white;
+        margin-top: 10px;
+        margin-bottom: 16px;
+        font-size: 32px;
+    }
+
+    p {
+        color: white;
+        opacity: 0.8;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .productFeatures {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 20px;
+        grid-row-gap: 16px;
+
+        .feature {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+
+
+.checkoutButton {
+    border: 2px solid white;
+    display: flex;
+    width: 100%;
+    background-image: var(--bg-shape-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: -2px -2px 2px 0px rgba(80, 80, 80, 0.1), 2px 2px 3px 0px rgba(12, 12, 12, 0.3), inset 0px 0px 0px 2px rgba(80, 80, 80, 0.2);
+    margin-top: 30px;
+    padding: 14px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* checkout button*/
+.showmore {
+    outline: 0;
+    border: 0;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+    p {
+        padding: 8px 17px;
+        border-right: 1px solid rgba(0, 0, 0, 0.4);
+    }
+}
+.buttonaction {
+    cursor: pointer;
+    padding: 5px 5px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.3s ease;
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(255,255,255,1);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(255,255,255,1);
-    box-shadow: 0px 0px 5px 0px rgba(255,255,255,1);
-    border-radius: 2px;
-
-    &:hover {
-        background-position-y: 20%;
-        filter: drop-shadow(-9px 16px 0px #343331);
-        cursor: pointer;
-    }
-
-    &:hover>.card-info {
-        top: 50%;
-        margin-top: 35px;
-    }
-
-    &:hover>.card-text {
-        top: 0;
-        width: 100%;
-        text-shadow: 5px 5px 10px rgba(36, 35, 35, 0.13);
-        background-color: #c06200;
-
-    }
-
-    &:hover>.card-text>.heading {
-        text-shadow: none;
-    }
-
-    &:hover>.card-text>.para {
-        text-shadow: none;
-    }
-
-    .card-text {
-        transition: 0.1s ease;
-        margin-bottom: 25px;
-        position: absolute;
-        color: white;
-        text-align: center;
-        font-family: $anton;
-        padding: 7px 5px;
-
-        .heading {
-            font-size: 35px;
-            text-shadow: 3px 10px 14px #151515;
-        }
-
-        .para {
-            font-size: 20px;
-            text-shadow: 3px 10px 14px #151515
-        }
-    }
-
-    .card-info {
-        transition: 0.3s ease;
-        bottom: -50%;
-        position: absolute;
-        width: 100%;
-        text-align: center;
-
-        .info-para {
-            color: white;
-            text-shadow: -2px 0px 11px #151515;
-            display: flex;
-            flex-direction: column;
-            span {
-                color: black;
-            }
-        }
-
-        button {
-            padding: 7px 18px;
-            border: none;
-            background-color: #ff8107;
-            margin-top: 25px;
-            text-transform: uppercase;
-            font-weight: bold;
-            a{
-                color: white;
-                text-decoration: none;
-            }
-
-            &:hover {
-                color: white;
-                background-color: #c06200;
-                cursor: pointer;
-            }
-        }
-    }
-
-}
-
-.card-section {
-    margin-top: 45px;
-    padding: 7px 18px;
-
-    flex-wrap: wrap;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-}
-
-.card-box:nth-child(2) {
-    background-image: url('https://media.discordapp.net/attachments/964479986855706624/977877243269361724/upgradefly.JPG?width=745&height=676');
-
-    &:hover>.card-text {
-        top: 0;
-        width: 100%;
-        text-shadow: 5px 5px 10px rgba(36, 35, 35, 0.13);
-        background-color: #0d7ded;
-
-    }
-
-    .card-info>button {
-        background-color: #0d7ded;
-
-        &:hover {
-            background-color: #0b6cca;
-        }
-    }
-}
-
-.card-box:nth-child(3) {
-    background-image: url('https://media.discordapp.net/attachments/964479986855706624/977879078688423986/Captura.JPG?width=866&height=676');
-    background-position: center;
-    background-size: cover;
-
-    &:hover>.card-text {
-        top: 0;
-        width: 100%;
-        text-shadow: 5px 5px 10px rgba(36, 35, 35, 0.13);
-        background-color: #c06200;
-
-    }
-
-    .card-info>button {
-        background-color: #ff8107;
-
-        &:hover {
-            background-color: #c06200;
+    &-icon{
+        font-size: 1.9rem;
+        a {
+            color: orange;
         }
     }
 }

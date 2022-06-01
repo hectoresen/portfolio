@@ -1,7 +1,7 @@
 import React from 'react';
 import {BsGithub, BsLinkedin} from 'react-icons/bs';
 import {AiOutlineMail} from 'react-icons/ai';
-import {BsArrowDownSquare, BsArrowLeftSquare} from 'react-icons/bs';
+import {BsArrowDownSquare, BsArrowLeftSquare,BsArrowRightSquare } from 'react-icons/bs';
 import './About.scss';
 import Technologies from './Technologies/Technologies';
 
@@ -10,9 +10,7 @@ const About = () => {
         return document.getElementById('cv').scrollIntoView({behavior: 'smooth'});
     };
     const goTech = () =>{
-        /* document.getElementById('about__techcontainer').style.left = 0; */
-        /* document.getElementById('about__container').style.left = '-100vw'; */
-        var i = 100 ;
+        let i = 100 ;
         window.setInterval(() => {
             if (i >= 0 ) {
                 i--;
@@ -20,11 +18,29 @@ const About = () => {
             }
         } , 5);
 
-        var o = 0;
+        let o = 0;
         window.setInterval(() => {
             if (o >= -100 ) {
                 o--;
                 document.getElementById('about__container').style.left = `${o}vw` ;
+            }
+        } , 5);
+    };
+
+    const goAbout = () =>{
+        let i = -100 ;
+            window.setInterval(() => {
+                if (i <= 0 ) {
+                    i++;
+                    document.getElementById('about__container').style.left = `${i}vw` ;
+                }
+            } , 5);
+
+        let o = 0;
+        window.setInterval(() => {
+            if (o <= 100 ) {
+                o++;
+                document.getElementById('about__techcontainer').style.left = `${o}vw` ;
             }
         } , 5);
     }
@@ -67,6 +83,10 @@ const About = () => {
             </div>
 
             <div className='about__techcontainer' id='about__techcontainer'>
+                <div className='about__techcontainer-abouticon'>
+                    <p>About</p>
+                    <p className='about__techcontainer-abouticon-icon' onClick={goAbout}><BsArrowRightSquare/></p>
+                </div>
                 <Technologies />
             </div>
         </div>
