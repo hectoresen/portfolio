@@ -5,10 +5,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 
     &__container {
-        height: 50vh;
+        height: auto;
         color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
     }
     a {
         text-decoration: none;
@@ -17,16 +21,28 @@
 
 :root {
     --bg-shape-color: linear-gradient(120deg, #343A4F, #0F1620);
-    --lightblue: #3D9DEA;
-    --darkblue: #4A4EEE;
     --text-color: #D5E1EF;
 }
 
 .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 350px;
+    min-height: 850px;
     border-radius: 40px;
     background-image: var(--bg-shape-color);
     overflow: hidden;
+}
+
+.active{
+    z-index: 2;
+    width: 350px;
+    min-height: 850px;
+    border-radius: 40px;
+    background-image: var(--bg-shape-color);
+    overflow: hidden;
+    transform: scale(1.2);
 }
 
 .overviewInfo,
@@ -36,8 +52,14 @@
 
 .overviewInfo {
     /* background-image: linear-gradient(176deg, var(--lightblue), var(--darkblue)); */
-    background-image: url('https://media.discordapp.net/attachments/964479986855706624/977877243269361724/upgradefly.JPG?width=715&height=649');
-    background-size: 100%;
+    &-UpgradeFly{
+        background-size: 100%;
+        background-image: url('https://media.discordapp.net/attachments/964479986855706624/977877243269361724/upgradefly.JPG?width=715&height=649');
+    }
+    &-Intranet{
+        background-size: 100%;
+        background-image: url('https://media.discordapp.net/attachments/964479986855706624/977879078688423986/Captura.JPG?width=866&height=676');
+    }
 }
 
 
@@ -88,6 +110,10 @@
 }
 
 .productSpecifications {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
 
     h1 {
         color: white;
@@ -158,4 +184,74 @@
             color: orange;
         }
     }
+}
+
+
+.projects__nav div {
+	position: absolute;
+	top: 50%;
+	left: 4%;
+	width: 5rem;
+	height: 5rem;
+	margin-top: -2.5rem;
+	list-style: none;
+}
+.projects__nav div:last-of-type {
+	left: auto;
+	right: 4%;
+}
+.prev, .next {
+	position: relative;
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+	display: block;
+	border-radius: 100%;
+	transition: box-shadow .3s;
+}
+.prev::before, .prev::after, .next::before, .next::after {
+	content: '';
+	position: absolute;
+	left: 43%;
+	background: #fff;
+	width: .4rem;
+	min-width: 3px;
+	border-radius: 3px;
+	height: 34%;
+}
+.prev::before {
+	transform: rotate(45deg);
+	top: 24%;
+}
+.prev::after {
+	transform: rotate(-45deg);
+	bottom: 24%;
+}
+.next::before, .next::after {
+	left: auto;
+	right: 43%;
+}
+.next::before {
+	transform: rotate(-45deg);
+	top: 24%;
+}
+.next::after {
+	transform: rotate(45deg);
+	bottom: 24%;
+}
+.prev:hover, .next:hover {
+	box-shadow: 0 0 0 1rem orange;
+}
+.projects__nav > div > span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border-radius: 100%;
+	z-index: 5;
+	pointer-events: none;
+	will-change: width, height;
+	transform: translate(-50%, -50%);
+	transition: width .6s, height .6s;
 }
