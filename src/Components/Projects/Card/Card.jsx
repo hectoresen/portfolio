@@ -3,32 +3,36 @@ import { BsArrowRightSquare } from 'react-icons/bs';
 import './Card.scss';
 
 const Card = ({ projectsList }) => {
-    const [selectedProject, setSelectedProject] = useState({});
+    const [accTotalProjects, setAccTotalProjects] = useState(0);
 
-    const selectProject = project => setSelectedProject(project);
+    const projectCards = document.getElementsByClassName('wrapper');
 
     useEffect(() => {
-        console.log(`Hay ${document.getElementsByClassName('wrapper').length} proyectos`);
-        document.getElementsByClassName('wrapper')[0].classList.add('active');
+        projectCards[0].classList.add('wrapper__0');
+        setAccTotalProjects(projectCards.length);
     })
-
     let accNavProjects = 0;
 
     const projectsNavigateUp = () => {
         accNavProjects++;
-        document.getElementsByClassName('wrapper')[accNavProjects - 1].classList.remove('active');
-        document.getElementsByClassName('wrapper')[accNavProjects].classList.add('active');
+        if(accNavProjects > accTotalProjects -1){
+            projectCards[accNavProjects -1].classList.remove('wrapper__0');
+            accNavProjects = accTotalProjects - accNavProjects;
+            projectCards[accNavProjects].classList.add('wrapper__0');
+        }else{
+            let cardLv1 = projectCards[accNavProjects-1]
+            cardLv1.classList.remove('wrapper__0');
+            cardLv1.classList.add('wrapper__1');
+            projectCards[accNavProjects].classList.add('wrapper__0');
+        };
     }
 
     const projectsNavigateDown = () => {
         accNavProjects--;
-        document.getElementsByClassName('wrapper')[accNavProjects + 1].classList.remove('active');
-        document.getElementsByClassName('wrapper')[accNavProjects].classList.add('active');
-
+        document.getElementsByClassName('wrapper')[accNavProjects + 1].classList.remove('wrapper__0');
+        document.getElementsByClassName('wrapper')[accNavProjects].classList.add('wrapper__0');
     }
 
-
-    console.log(projectsList);
     return <div className='projects__container'>
         <nav className='projects__nav'>
             <div><a className="prev" href="#" onClick={projectsNavigateDown}></a></div>
@@ -38,7 +42,6 @@ const Card = ({ projectsList }) => {
             return <div className={`wrapper wrapper__${index}`}
                 id='wrapper-projects'
                 key={element.Name}
-                onClick={() => { selectProject(element) }}
             >
                 <div className={`overviewInfo-${element.Name}`}>
                     <div className="productinfo">
