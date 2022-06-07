@@ -3,34 +3,32 @@ import { BsArrowRightSquare } from 'react-icons/bs';
 import './Card.scss';
 
 const Card = ({ projectsList }) => {
+    const projectCards = document.getElementsByClassName('wrapper');
     const [accTotalProjects, setAccTotalProjects] = useState(0);
 
-    const projectCards = document.getElementsByClassName('wrapper');
 
     useEffect(() => {
-        projectCards[0].classList.add('wrapper__0');
         setAccTotalProjects(projectCards.length);
+        projectCards[parseInt(projectCards.length / 2)].classList.add('wrapper__active');
     })
-    let accNavProjects = 0;
+    let middleProjects = parseInt(projectCards.length / 2);
 
     const projectsNavigateUp = () => {
-        accNavProjects++;
-        if(accNavProjects > accTotalProjects -1){
-            projectCards[accNavProjects -1].classList.remove('wrapper__0');
-            accNavProjects = accTotalProjects - accNavProjects;
-            projectCards[accNavProjects].classList.add('wrapper__0');
-        }else{
-            let cardLv1 = projectCards[accNavProjects-1]
-            cardLv1.classList.remove('wrapper__0');
-            cardLv1.classList.add('wrapper__1');
-            projectCards[accNavProjects].classList.add('wrapper__0');
-        };
+        projectCards[middleProjects].classList.remove('wrapper__active');
+
+        /* Primer elemento pasa a ser el último elemento */
+        projectCards[accTotalProjects -1].parentNode.insertBefore(projectCards[0], accTotalProjects.nextSibling);
+        projectCards[middleProjects].classList.add('wrapper__active');
+
     }
 
     const projectsNavigateDown = () => {
-        accNavProjects--;
-        document.getElementsByClassName('wrapper')[accNavProjects + 1].classList.remove('wrapper__0');
-        document.getElementsByClassName('wrapper')[accNavProjects].classList.add('wrapper__0');
+        projectCards[middleProjects].classList.remove('wrapper__active');
+
+        /* Último elemento pasa a ser el primero */
+
+        projectCards[0].parentNode.insertBefore(projectCards[0], accTotalProjects.nextSibling);
+        projectCards[middleProjects].classList.add('wrapper__active');
     }
 
     return <div className='projects__container'>
