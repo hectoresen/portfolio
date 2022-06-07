@@ -11,48 +11,24 @@ const Card = ({ projectsList }) => {
         setAccTotalProjects(projectCards.length);
         projectCards[parseInt(projectCards.length / 2)].classList.add('wrapper__active');
     })
-    let accNavProjects = parseInt(projectCards.length / 2);
-    console.log(accNavProjects);
+    let middleProjects = parseInt(projectCards.length / 2);
 
     const projectsNavigateUp = () => {
+        projectCards[middleProjects].classList.remove('wrapper__active');
 
-        accNavProjects++;
+        /* Primer elemento pasa a ser el último elemento */
+        projectCards[accTotalProjects -1].parentNode.insertBefore(projectCards[0], accTotalProjects.nextSibling);
+        projectCards[middleProjects].classList.add('wrapper__active');
 
-        if(accNavProjects > accTotalProjects -1){
-            console.log('IF');
-            console.log('ACC NAV PROJECTS: ', accNavProjects);
-            console.log('ACC TOTAL PROJECTS: ', accTotalProjects);
-            projectCards[accNavProjects -1].classList.remove('wrapper__active');
-            projectCards[accNavProjects -1].classList.add('wrapper__inactive1');
-            accNavProjects = accTotalProjects - accNavProjects;
-            projectCards[accNavProjects + 2].classList.add('wrapper__inactive2');
-            projectCards[accNavProjects + 2].classList.remove('wrapper__inactive1');
-            projectCards[accNavProjects].classList.remove('wrapper__inactive1', 'wrapper__inactive2');
-            projectCards[accNavProjects].classList.add('wrapper__active');
-        }else{
-            console.log('ELSE');
-            projectCards[accNavProjects -1].classList.remove('wrapper__active');
-            projectCards[accNavProjects -1].classList.add('wrapper__inactive1');
-
-            if(projectCards[accNavProjects -2]){
-                projectCards[accNavProjects -2].classList.add('wrapper__inactive2');
-                projectCards[accNavProjects -2].classList.remove('wrapper__inactive1');
-            }
-
-            if(projectCards[accNavProjects + 2]){
-                projectCards[accNavProjects + 2].classList.add('wrapper__inactive2');
-                projectCards[accNavProjects + 2].classList.remove('wrapper__inactive1');
-            }
-
-            projectCards[accNavProjects].classList.add('wrapper__active');
-            projectCards[accNavProjects].classList.remove('wrapper__inactive1', 'wrapper__inactive2');
-        }
     }
 
     const projectsNavigateDown = () => {
-        accNavProjects--;
-        document.getElementsByClassName('wrapper')[accNavProjects + 1].classList.remove('wrapper__0');
-        document.getElementsByClassName('wrapper')[accNavProjects].classList.add('wrapper__0');
+        projectCards[middleProjects].classList.remove('wrapper__active');
+
+        /* Último elemento pasa a ser el primero */
+
+        projectCards[0].parentNode.insertBefore(projectCards[0], accTotalProjects.nextSibling);
+        projectCards[middleProjects].classList.add('wrapper__active');
     }
 
     return <div className='projects__container'>
