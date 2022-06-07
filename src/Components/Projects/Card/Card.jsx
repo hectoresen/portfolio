@@ -3,28 +3,50 @@ import { BsArrowRightSquare } from 'react-icons/bs';
 import './Card.scss';
 
 const Card = ({ projectsList }) => {
+    const projectCards = document.getElementsByClassName('wrapper');
     const [accTotalProjects, setAccTotalProjects] = useState(0);
 
-    const projectCards = document.getElementsByClassName('wrapper');
 
     useEffect(() => {
-        projectCards[0].classList.add('wrapper__0');
         setAccTotalProjects(projectCards.length);
+        projectCards[parseInt(projectCards.length / 2)].classList.add('wrapper__active');
     })
-    let accNavProjects = 0;
+    let accNavProjects = parseInt(projectCards.length / 2);
+    console.log(accNavProjects);
 
     const projectsNavigateUp = () => {
+
         accNavProjects++;
+
         if(accNavProjects > accTotalProjects -1){
-            projectCards[accNavProjects -1].classList.remove('wrapper__0');
+            console.log('IF');
+            console.log('ACC NAV PROJECTS: ', accNavProjects);
+            console.log('ACC TOTAL PROJECTS: ', accTotalProjects);
+            projectCards[accNavProjects -1].classList.remove('wrapper__active');
+            projectCards[accNavProjects -1].classList.add('wrapper__inactive1');
             accNavProjects = accTotalProjects - accNavProjects;
-            projectCards[accNavProjects].classList.add('wrapper__0');
+            projectCards[accNavProjects + 2].classList.add('wrapper__inactive2');
+            projectCards[accNavProjects + 2].classList.remove('wrapper__inactive1');
+            projectCards[accNavProjects].classList.remove('wrapper__inactive1', 'wrapper__inactive2');
+            projectCards[accNavProjects].classList.add('wrapper__active');
         }else{
-            let cardLv1 = projectCards[accNavProjects-1]
-            cardLv1.classList.remove('wrapper__0');
-            cardLv1.classList.add('wrapper__1');
-            projectCards[accNavProjects].classList.add('wrapper__0');
-        };
+            console.log('ELSE');
+            projectCards[accNavProjects -1].classList.remove('wrapper__active');
+            projectCards[accNavProjects -1].classList.add('wrapper__inactive1');
+
+            if(projectCards[accNavProjects -2]){
+                projectCards[accNavProjects -2].classList.add('wrapper__inactive2');
+                projectCards[accNavProjects -2].classList.remove('wrapper__inactive1');
+            }
+
+            if(projectCards[accNavProjects + 2]){
+                projectCards[accNavProjects + 2].classList.add('wrapper__inactive2');
+                projectCards[accNavProjects + 2].classList.remove('wrapper__inactive1');
+            }
+
+            projectCards[accNavProjects].classList.add('wrapper__active');
+            projectCards[accNavProjects].classList.remove('wrapper__inactive1', 'wrapper__inactive2');
+        }
     }
 
     const projectsNavigateDown = () => {
