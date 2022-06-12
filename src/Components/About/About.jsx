@@ -3,9 +3,12 @@ import {BsGithub, BsLinkedin} from 'react-icons/bs';
 import {AiOutlineMail} from 'react-icons/ai';
 import {BsArrowDownSquare, BsArrowLeftSquare,BsArrowRightSquare } from 'react-icons/bs';
 import './About.scss';
+import { HackBgContext } from '../../Shared/Contexts/BgContext';
 import Technologies from './Technologies/Technologies';
+import { useContext } from 'react';
 
 const About = () => {
+    const [{activeHackBg}, toggleHackBg] = useContext(HackBgContext);
     const goToCv = () =>{
         return document.getElementById('cv').scrollIntoView({behavior: 'smooth'});
     };
@@ -51,18 +54,7 @@ const About = () => {
                 <div className='about__container-me'>
                     <h2>About me:</h2>
                     <p>
-                    I am 30 years old, currently working while
-                    I carry out several projects both in Front and
-                    in Back that you can see on my GitHub. What
-                    organized person with a great
-                    motivation, I am able to adapt to
-                    any circumstance and always give what
-                    best of me in each project. Throughout my years
-                    of work experience I have acquired several skills
-                    that allow me to adapt to different work methodologies
-                    and maintain continuous communication with the rest of
-                    the team to analyze, improve and offer the best solution
-                    at all times.
+                    I'm 30 years old, I love outdoor activities and sports, I'm currently working while doing several Front and Back projects that you can see on my GitHub. What an organized and highly motivated person, I am able to adapt to any circumstance and always give my best in each project. Throughout my years of work experience I have acquired several skills that allow me to adapt to different work methodologies and maintain continuous communication with the rest of the team to analyze, improve and offer the best solution at all times.
                     </p>
                 </div>
                 <div className='about__container-socials'>

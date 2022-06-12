@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { BsArrowRightSquare } from 'react-icons/bs';
-import { setUpClasses } from './card-script';
+import { defaultClasses, setDownClasses, setUpClasses } from './card-script';
 import './Card.scss';
 
 const Card = ({ projectsList }) => {
     const projectCards = document.getElementsByClassName('wrapper');
     const [accTotalProjects, setAccTotalProjects] = useState(0);
 
-    
     useEffect(() => {
         setAccTotalProjects(projectCards.length);
-        projectCards[parseInt(projectCards.length / 2)].classList.add('wrapper__active');
-        projectCards[parseInt(projectCards.length / 2) -1].classList.add('wrapper__inactive1');
-        projectCards[parseInt(projectCards.length / 2) +1].classList.add('wrapper__inactive1');
-    },)
-    
+        defaultClasses(projectCards);
+
+    });
+
     let middleProjects = parseInt(projectCards.length / 2);
 
     const projectsNavigateUp = () => {
@@ -24,10 +22,7 @@ const Card = ({ projectsList }) => {
         projectCards[accTotalProjects -1].parentNode.insertBefore(projectCards[0], accTotalProjects.nextSibling);
         projectCards[middleProjects].classList.add('wrapper__active');
 
-        /* SET CLASSES  */
-
         setUpClasses(middleProjects, projectCards);
-
     }
 
     const projectsNavigateDown = () => {
@@ -36,6 +31,8 @@ const Card = ({ projectsList }) => {
         /* Último elemento pasa a ser el primero */
         projectCards[0].parentNode.insertBefore(projectCards[0], accTotalProjects.nextSibling);
         projectCards[middleProjects].classList.add('wrapper__active');
+
+        setDownClasses(middleProjects, projectCards)
     }
 
     return <div className='projects__container'>
@@ -55,7 +52,7 @@ const Card = ({ projectsList }) => {
                         </div>
                     </div>
                 </div>
-                <div className="productSpecifications">
+                <div className="projectSpecifications">
                     <h1 id='project-name'> {element.Name} </h1>
                     <p>{element.Description}</p>
                     <div className="productFeatures">

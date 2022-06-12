@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import { HackBgContext } from '../../../../Shared/Contexts/BgContext';
+import { Link } from 'react-scroll';
+
 import './HackConsole.scss';
 
 const ConsoleHook = () => {
@@ -31,35 +33,42 @@ const HackConsole = () => {
         consoleInput.addEventListener('keypress', function(event) {
             if(event.key === 'Enter'){
                 event.preventDefault();
-                setConsoleValue(consoleInput.value)
+                setConsoleValue(consoleInput.value);
             }
         })
     });
 
     useEffect(() =>{
-        document.onkeydown = function(e){
-            console.log(e.key);
-            if(e.key === 'Escape'){
+        document.onkeydown = function(event){
+            if(event.key === 'Escape'){
                 toggleHackBg();
             }
         }
     });
+
+    const closeHackConsole = (ev) => {
+        setTimeout(() =>{
+            toggleHackBg()
+        },500)
+    };
 
     const getHackPortfolio = () =>{
         const getItem = items.find(element => element.name.toLowerCase() === consoleValue.toLowerCase());
 
         if(getItem){
             if(getItem.name === 'about'){
+                closeHackConsole()
                 return document.getElementById('about').scrollIntoView({behavior: 'smooth'});
             }else if(getItem.name === 'cv'){
+                closeHackConsole()
                 return document.getElementById('cv').scrollIntoView({behavior: 'smooth'});
             }else if(getItem.name === 'projects'){
+                closeHackConsole()
                 return document.getElementById('projects').scrollIntoView({behavior: 'smooth'});
             }
         }else{
             return;
         }
-
     }
 
     return (
