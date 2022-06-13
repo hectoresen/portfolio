@@ -2,16 +2,14 @@ import React from 'react';
 import {BsGithub, BsLinkedin} from 'react-icons/bs';
 import {AiOutlineMail} from 'react-icons/ai';
 import {BsArrowDownSquare, BsArrowLeftSquare,BsArrowRightSquare } from 'react-icons/bs';
-import './About.scss';
-import { HackBgContext } from '../../Shared/Contexts/BgContext';
 import Technologies from './Technologies/Technologies';
-import { useContext } from 'react';
+import './About.scss';
 
 const About = () => {
-    const [{activeHackBg}, toggleHackBg] = useContext(HackBgContext);
-    const goToCv = () =>{
-        return document.getElementById('cv').scrollIntoView({behavior: 'smooth'});
+    const goToProjects = () =>{
+        return document.getElementById('projects').scrollIntoView({behavior: 'smooth'});
     };
+
     const goTech = () =>{
         let i = 100 ;
         window.setInterval(() => {
@@ -65,8 +63,8 @@ const About = () => {
                     </ul>
                 </div>
                 <div className='about__container-socials-gocv'>
-                    <p>CV</p>
-                    <p className='about__container-cvicon' onClick={goToCv}><BsArrowDownSquare /></p>
+                    <p>PROJECTS</p>
+                    <p className='about__container-cvicon' onClick={goToProjects}><BsArrowDownSquare /></p>
                 </div>
                 <div className='about__container__technologies'>
                     <p className='about__container__technologies-techicon' onClick={goTech}> <BsArrowLeftSquare/></p>

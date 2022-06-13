@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import { HackBgContext } from '../../../../Shared/Contexts/BgContext';
-import { Link } from 'react-scroll';
+import myCv from '../../../../Assets/CV.pdf';
 
 import './HackConsole.scss';
 
@@ -60,8 +60,8 @@ const HackConsole = () => {
                 closeHackConsole()
                 return document.getElementById('about').scrollIntoView({behavior: 'smooth'});
             }else if(getItem.name === 'cv'){
-                closeHackConsole()
-                return document.getElementById('cv').scrollIntoView({behavior: 'smooth'});
+                closeHackConsole();
+                return window.open(myCv, '_blank');
             }else if(getItem.name === 'projects'){
                 closeHackConsole()
                 return document.getElementById('projects').scrollIntoView({behavior: 'smooth'});
