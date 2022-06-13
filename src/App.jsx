@@ -1,9 +1,6 @@
 
-import { Header, Introduction, About, Cv, Projects } from './Components';
-import { useEffect } from 'react';
-import 'animate.css';
+import { Header, Introduction, About, Projects, CvButton } from './Components';
 import './App.scss';
-import ScrollTopArrow from './Hooks/ScrollTopArrow/ScrollTopArrow';
 
 function App() {
 
@@ -18,13 +15,12 @@ function App() {
       <section className='portfolio__about'>
         <About />
       </section>
-      <section className='portfolio__CV'>
-        <Cv />
-      </section>
       <section className='portfolio__projects'>
         <Projects />
       </section>
-      <ScrollTopArrow />
+      <div className='cvbutton'>
+        <CvButton />
+      </div>
     </div>
   );
 }

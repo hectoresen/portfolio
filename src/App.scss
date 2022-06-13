@@ -7,14 +7,10 @@
     overflow-x: hidden;
 }
 
-.scrollTop{
-    width: 3%;
+.cvbutton{
     position: absolute;
-    right: 0;
-    margin-right: 2%;
-}
-
-.scrollTop:hover{
-    cursor: pointer;
-    color: red;
+    bottom: 0;
+    left: 0;
+    margin-left: 1%;
+    margin-bottom: 1%;
 }

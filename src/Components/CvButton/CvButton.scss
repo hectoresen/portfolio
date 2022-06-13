@@ -1,0 +1,58 @@
+.cvdownload{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    a{
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+    }
+    &-pdf{
+        display: flex;
+        justify-content: center;
+        color: orange;
+        font-size: 2.5em;
+        text-decoration: none;
+        animation: color-change-link 15s infinite;
+    }
+    &-text{
+        font-size: 1.3em;
+        color: white;
+        text-align: center;
+        animation: color-change-text 15s infinite;
+    }
+    &-download{
+        display: none;
+    }
+};
+
+.cvdownload a:hover{
+    .cvdownload-link{
+        animation: none;
+    }
+    .cvdownload-pdf{
+        display: none;
+    }
+    .cvdownload-text{
+        animation: none;
+    }
+    .cvdownload-download{
+        display: flex;
+        justify-content: center;
+        font-size: 2.5em;
+        color: orange;
+    }
+}
+
+
+
+@keyframes color-change-text {
+    0% { color: white; }
+    50% { color: orange; }
+}
+
+@keyframes color-change-link {
+    0% { color: orange; }
+    50% { color: white; }
+}
