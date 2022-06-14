@@ -52,7 +52,11 @@ const About = () => {
                 <div className='about__container-me'>
                     <h2>About me:</h2>
                     <p>
-                    I'm 30 years old, I love outdoor activities and sports, I'm currently working while doing several Front and Back projects that you can see on my GitHub. What an organized and highly motivated person, I am able to adapt to any circumstance and always give my best in each project. Throughout my years of work experience I have acquired several skills that allow me to adapt to different work methodologies and maintain continuous communication with the rest of the team to analyze, improve and offer the best solution at all times.
+                        Welcome to my portfolio!
+                        <br></br>
+                        I am 30 years old, I am a lover of sports, outdoor activities and animals.
+                        <br></br>
+                        I am currently working while making several Front and Back projects that you can see on my GitHub. As an organized and motivated person, I am able to adapt to any circumstance and always give my best in each project. Throughout my years of work experience I have acquired several skills that allow me to adapt to different work methodologies and maintain continuous communication with the rest of the team to analyze, improve and offer the best solution at all times.
                     </p>
                 </div>
                 <div className='about__container-socials'>
