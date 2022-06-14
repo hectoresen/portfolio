@@ -4,6 +4,7 @@ import About from "./About/About";
 import Photo from "./Photo/Photo";
 import Projects from "./Projects/Projects";
 import CvButton from "./CvButton/CvButton";
+import TopScrollButton from "./TopScrollButton/TopScrollButton";
 
 export {
     Header,
@@ -11,5 +12,6 @@ export {
     About,
     Photo,
     Projects,
-    CvButton
+    CvButton,
+    TopScrollButton
 }
