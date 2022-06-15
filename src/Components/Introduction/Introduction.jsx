@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import { HackBgContext } from '../../Shared/Contexts/BgContext';
+import {Header} from '../../Components';
 import HackBg from './HackBg/HackBg';
 import Photo from '../Photo/Photo';
 import './Introduction.scss';
@@ -29,7 +30,8 @@ const Introduction = () => {
     const [{activeHackBg}, toggleHackBg] = useContext(HackBgContext);
 
     return (
-        <div className='introduction' style={{ padding: 20 }}>
+        <div className='introduction'>
+            <Header />
             <div className='introduction__me'>
                 <h1>I'm</h1>
                 <NameHook />
