@@ -1,5 +1,5 @@
 
-import { Header, Introduction, About, Projects, CvButton, TopScrollButton } from './Components';
+import {Introduction, About, Projects, CvButton, TopScrollButton } from './Components';
 import './App.scss';
 import { useState } from 'react';
 
@@ -16,9 +16,6 @@ function App() {
 
   return (
     <div className="portfolio" id='portfolio' onScroll={checkScroll}>
-      <header>
-        <Header />
-      </header>
       <div className='portfolio__introduction'>
         <Introduction />
       </div>
