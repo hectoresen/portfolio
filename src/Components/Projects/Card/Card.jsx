@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BsArrowRightSquare } from 'react-icons/bs';
 import { defaultClasses, setDownClasses, setUpClasses } from './card-script';
+import { FormattedMessage  as T} from 'react-intl';
 import './Card.scss';
 
 const Card = ({ projectsList }) => {
