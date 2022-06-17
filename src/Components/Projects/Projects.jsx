@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card/Card';
+import { FormattedMessage  as T} from 'react-intl';
 import './Projects.scss';
 
 
@@ -8,7 +9,7 @@ const Projects = () => {
   const myProjects = [
     {
       Name : 'UpgradeFly',
-      Description: 'Project with Angular for the Upgrade Hub bootcamp (Full Stack)',
+      Description: <T id="Projects.upgradefly.description" />,
       Technologies: [
         {Angular: 'https://media.discordapp.net/attachments/964479986855706624/980757086000541726/kisspng-angularjs-rxjs-angular-november-meetup-javascript-building-applications-with-angular-material-genu-5bf28bff4df5f6.2092311215426222073193.png'},
         {Javascript: 'https://media.discordapp.net/attachments/964479986855706624/979816266275635200/kisspng-javascript-portable-network-graphics-logo-clip-art-javascript-programs-amp-output-apps-on-google-5b69409b183213.5468079715336244750991.png'},
@@ -20,7 +21,7 @@ const Projects = () => {
     },
     {
       Name : 'Intranet',
-      Description: '12-day personal challenge, develop a complete application with users, administrators, event management, news and much more',
+      Description: <T id="Projects.intranet.description" />,
       Technologies: [
         {React: 'https://media.discordapp.net/attachments/964479986855706624/980756695548575744/kisspng-react-business-javascript-computer-software-npm-react-5b2dd02b688437.5188897215297290674281.png'},
         {Javascript: 'https://media.discordapp.net/attachments/964479986855706624/979816266275635200/kisspng-javascript-portable-network-graphics-logo-clip-art-javascript-programs-amp-output-apps-on-google-5b69409b183213.5468079715336244750991.png'},
@@ -34,7 +35,7 @@ const Projects = () => {
     },
     {
       Name : 'E-Commerce',
-      Description: 'Final project for the Upgrade Hub (Full Stack) bootcamp. It is an e-commerce with user authentication, administrators, shopping cart, product stock management and much more.',
+      Description: <T id="Projects.ecommerce.description" />,
       Technologies: [
         {React: 'https://media.discordapp.net/attachments/964479986855706624/980756695548575744/kisspng-react-business-javascript-computer-software-npm-react-5b2dd02b688437.5188897215297290674281.png'},
         {Javascript: 'https://media.discordapp.net/attachments/964479986855706624/979816266275635200/kisspng-javascript-portable-network-graphics-logo-clip-art-javascript-programs-amp-output-apps-on-google-5b69409b183213.5468079715336244750991.png'},
@@ -48,7 +49,7 @@ const Projects = () => {
     },
     {
       Name : 'Cheapshark',
-      Description: 'Full Javascript, HTML5 and SCSS project for Upgrade Hub in which price comparisons are made through a public api on videogames',
+      Description: <T id="Projects.cheapshark.description" />,
       Technologies: [
         {Javascript: 'https://media.discordapp.net/attachments/964479986855706624/979816266275635200/kisspng-javascript-portable-network-graphics-logo-clip-art-javascript-programs-amp-output-apps-on-google-5b69409b183213.5468079715336244750991.png'},
         {HTML5: 'https://media.discordapp.net/attachments/964479986855706624/979814194511773756/kisspng-responsive-web-design-html-computer-icons-css3-wor-css-5ada2556b56739.2541863015242458467431.png'},
@@ -57,8 +58,8 @@ const Projects = () => {
       Url: 'https://gitlab.com/Hectoresen/proyecto-js-cheapshark'
     },
     {
-      Name : 'Symfony Simple Instagram',
-      Description: 'Simple instagram made with symfony using docker, php, twig, html and css3 to secure bases in Upgrade Hub',
+      Name : <T id="Projects.simpleInstagram.title" />,
+      Description: <T id="Projects.simpleInstagram.description" />,
       Technologies: [
         {PHP: 'https://media.discordapp.net/attachments/964479986855706624/983081148014026802/icons8-logo-php-480.png'},
         {Symfony: 'https://media.discordapp.net/attachments/964479986855706624/983081923092025434/icons8-symfony-480.png'},

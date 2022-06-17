@@ -4,6 +4,7 @@ import { HackBgContext } from '../../Shared/Contexts/BgContext';
 import {Header} from '../../Components';
 import HackBg from './HackBg/HackBg';
 import Photo from '../Photo/Photo';
+import { FormattedMessage  as T} from 'react-intl';
 import './Introduction.scss';
 
 const NameHook = () => {
@@ -33,7 +34,7 @@ const Introduction = () => {
         <div className='introduction'>
             <Header />
             <div className='introduction__me'>
-                <h1>I'm</h1>
+                <h1><T id="Introduction.machine" /></h1>
                 <NameHook />
             </div>
             <Photo/>
@@ -43,7 +44,7 @@ const Introduction = () => {
                     <span></span>
                     <span></span>
                     <span></span>
-                    About me
+                    <T id="Introduction.about.btn" />
                 </a>
             </div>
             {

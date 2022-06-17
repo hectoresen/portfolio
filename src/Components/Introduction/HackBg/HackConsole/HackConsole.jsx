@@ -81,6 +81,7 @@ const HackConsole = () => {
                 <p><Cursor /></p><input
                                     className='hackconsole__input'
                                     id='hackconsole__input'
+                                    autoFocus
                                     >
                                 </input>
             </div>

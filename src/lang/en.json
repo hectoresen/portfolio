@@ -1,0 +1,15 @@
+{
+    "Introduction.machine": "I'm",
+    "Introduction.about.btn": "About me",
+    "About.title": "About me",
+    "About.content": "Welcome to my portfolio! I am 30 years old, I am a lover of sports, outdoor activities and animals. I am currently working while making several Front and Back projects that you can see on my GitHub. As an organized and motivated person, I am able to adapt to any circumstance and always give my best in each project. Throughout my years of work experience I have acquired several skills that allow me to adapt to different work methodologies and maintain continuous communication with the rest of the team to analyze, improve and offer the best solution at all times.",
+    "About.tech.btn": "Technologies",
+    "About.tech.projects": "Projects",
+    "Projects.ecommerce.description": "Final project for Upgrade Hub, it is a complete e-commerce with purchases, cart, stock management, user management and full authentication.",
+    "Projects.intranet.description": "Personal challenge, develop an internal application where users can create news, navigate between them, create reminders, chats between users, chat groups and application management by users with administrator role in 12 days.",
+    "Projects.cheapshark.description": "100% javascript project where a comparison of the prices of several games is made through an api and the user is told how much money he saves by buying in one place or another and the discount he has at the time of searching for it.",
+    "Projects.upgradefly.description" : "Project in Angular with typescript where you can search for flights to different destinations, filter by origin, destination, price, direct flights or if they include hand luggage or not in the price. By default, a list of trips will be shown where you will have complete information with images of the destination, you can also add them to the cart.",
+    "Projects.simpleInstagram.title" : "Simple instagram",
+    "Projects.simpleInstagram.description" : "A simple instagram where the user will be able to register, login, add photos to their profile or comment on other photos using docker, php, symfony, twig, html, css and sql.",
+    "Projects.btn.seeMore": "See more about the project"
+}
