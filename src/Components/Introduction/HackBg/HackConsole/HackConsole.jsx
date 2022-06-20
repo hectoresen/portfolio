@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import { HackBgContext } from '../../../../Shared/Contexts/BgContext';
 import myCv from '../../../../Assets/CV.pdf';
-
+import { FormattedMessage  as T} from 'react-intl';
 import './HackConsole.scss';
 
 const ConsoleHook = () => {
@@ -74,7 +74,7 @@ const HackConsole = () => {
     return (
         <div className='hackconsole'>
             <div className='hackconsole__header'>
-                <p>You can try typing...</p>
+                <p><T id="Hackconsole.trytyping" />&nbsp;</p>
                 <ConsoleHook />
             </div>
             <div className='hackconsole__console'>
@@ -85,6 +85,7 @@ const HackConsole = () => {
                                     >
                                 </input>
             </div>
+            {/* <p><small>Pulsa la tecla ENTER</small></p> */}
             <div className='hackconsole__portfolio'>
                 {getHackPortfolio()}
             </div>

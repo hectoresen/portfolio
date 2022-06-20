@@ -11,5 +11,11 @@
     "Projects.upgradefly.description" : "Project in Angular with typescript where you can search for flights to different destinations, filter by origin, destination, price, direct flights or if they include hand luggage or not in the price. By default, a list of trips will be shown where you will have complete information with images of the destination, you can also add them to the cart.",
     "Projects.simpleInstagram.title" : "Simple instagram",
     "Projects.simpleInstagram.description" : "A simple instagram where the user will be able to register, login, add photos to their profile or comment on other photos using docker, php, symfony, twig, html, css and sql.",
-    "Projects.btn.seeMore": "See more about the project"
+    "Projects.btn.seeMore": "See more about the project",
+    "Download.resume": "Download resume",
+    "Hackconsole.title": "Conflict",
+    "Hackconsole.error": "There has been a conflict and the application has entered safe mode",
+    "Hackconsole.lookingdeveloper": "Are you looking for a good developer?",
+    "Hackconsole.useconsole" : "Use the console to navigate through the portfolio. You can exit this by pressing",
+    "Hackconsole.trytyping": "You can try typing "
 }

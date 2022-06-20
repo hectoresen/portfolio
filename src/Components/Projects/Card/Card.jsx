@@ -72,7 +72,7 @@ const Card = ({ projectsList }) => {
                     </div>
                     <div className="checkoutButton">
                         <div className="showmore">
-                            <p>See more about the project</p>
+                            <p><T id="Projects.btn.seeMore" /></p>
                         </div>
                         <div className="buttonaction">
                             <h3 className='buttonaction-icon'><a href={element.Url} target="_blank" ><BsArrowRightSquare /></a></h3>
