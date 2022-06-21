@@ -9,32 +9,31 @@
     flex-direction: column;
     justify-content: space-between;
     width: 340px;
-    min-height: 810px;
+    height: 70vh;
     border-radius: 40px;
     background-image: var(--bg-shape-color);
     overflow: hidden;
     &__active{
         z-index: 3;
         width: 350px;
-        min-height: 810px;
+        height: 71vh;
         border-radius: 40px;
         background-image: var(--bg-shape-color);
         overflow: hidden;
-        margin: 1%;
         transform: scale(1.1);
         transition: width 1s;
+        margin: 2%;
     }
     &__inactive1{
         z-index: 2;
         opacity: 0.8;
-        transform: scale(0.95);
+        transform: scale(0.99);
     }
     &__inactive2{
         z-index: 1;
         opacity: 0.6;
-        transform: scale(0.85);
         overflow: hidden;
-        margin: -2%;
+        transform: scale(0.95);
     }
 }
 
@@ -101,7 +100,6 @@
 .featureIcon {
     width: 40px;
     height: 40px;
-/*     background-image: var(--bg-shape-color); */
     border-radius: 8px;
     margin-right: 16px;
     img{
@@ -259,7 +257,60 @@
 
 
 @media screen and (max-width: 480px){
-    .wrapper{
-        width: 200px;
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 75vh;
+        overflow: hidden;
+        &__active{
+            z-index: 3;
+            width: 100vw;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: width 1s;
+            margin: 2%;
+        }
+        &__inactive1{
+            display: none;
+        }
+        &__inactive2{
+            display: none;
+        }
+    };
+
+.featureIcon {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    margin-right: 16px;
+}
+
+.projectSpecifications {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+    h1 {
+        color: white;
+        margin-top: 1px;
+        margin-bottom: 7px;
+        font-size: 30px;
     }
-};
+    p {
+        color: white;
+        opacity: 0.8;
+        font-size: 15px;
+        line-height: 1.4;
+    }
+    .productFeatures {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 20px;
+        grid-row-gap: 16px;
+        .feature {
+            display: flex;
+            align-items: center;
+        }
+    }
+}};

@@ -9,7 +9,6 @@
     "Projects.intranet.description": "Personal challenge, develop an internal application where users can create news, navigate between them, create reminders, chats between users, chat groups and application management by users with administrator role in 12 days.",
     "Projects.cheapshark.description": "100% javascript project where a comparison of the prices of several games is made through an api and the user is told how much money he saves by buying in one place or another and the discount he has at the time of searching for it.",
     "Projects.upgradefly.description" : "Project in Angular with typescript where you can search for flights to different destinations, filter by origin, destination, price, direct flights or if they include hand luggage or not in the price. By default, a list of trips will be shown where you will have complete information with images of the destination, you can also add them to the cart.",
-    "Projects.simpleInstagram.title" : "Simple instagram",
     "Projects.simpleInstagram.description" : "A simple instagram where the user will be able to register, login, add photos to their profile or comment on other photos using docker, php, symfony, twig, html, css and sql.",
     "Projects.btn.seeMore": "See more about the project",
     "Download.resume": "Download resume",

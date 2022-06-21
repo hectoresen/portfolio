@@ -58,7 +58,7 @@ const Projects = () => {
       Url: 'https://gitlab.com/Hectoresen/proyecto-js-cheapshark'
     },
     {
-      Name : <T id="Projects.simpleInstagram.title" />,
+      Name : 'Instagram',
       Description: <T id="Projects.simpleInstagram.description" />,
       Technologies: [
         {PHP: 'https://media.discordapp.net/attachments/964479986855706624/983081148014026802/icons8-logo-php-480.png'},

@@ -11,7 +11,6 @@ const Card = ({ projectsList }) => {
     useEffect(() => {
         setAccTotalProjects(projectCards.length);
         defaultClasses(projectCards);
-
     });
 
     let middleProjects = parseInt(projectCards.length / 2);
