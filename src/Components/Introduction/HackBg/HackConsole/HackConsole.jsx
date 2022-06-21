@@ -49,7 +49,7 @@ const HackConsole = () => {
     const closeHackConsole = (ev) => {
         setTimeout(() =>{
             toggleHackBg()
-        },750)
+        },1000)
     };
 
     const getHackPortfolio = () =>{
