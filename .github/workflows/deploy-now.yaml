@@ -33,7 +33,7 @@ jobs:
 
       - name: Build Node assets
         env:
-          CI: true
+          CI: false
           SITE_URL: ${{ steps.project.outputs.site-url }}
         run: CI=false npm run build
 
