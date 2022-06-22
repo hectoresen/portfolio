@@ -6,7 +6,7 @@ const Technologies = () => {
     'html',
     'css',
     'sass',
-    'js',
+    'javascript',
     'react',
     'angular',
     'node',
