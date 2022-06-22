@@ -35,7 +35,7 @@ jobs:
         env:
           CI: false
           SITE_URL: ${{ steps.project.outputs.site-url }}
-        run: CI=false npm run build
+        run: npm run build
 
       - name: Deploy to IONOS
         if: ${{ steps.project.outputs.deployment-enabled == 'true' }}
