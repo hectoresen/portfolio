@@ -66,10 +66,15 @@
         background-size: 100%;
         background-image: url('https://media.discordapp.net/attachments/964479986855706624/983753264522735616/cheapshark3.JPG?width=1081&height=946');
     }
+    &-Instagram{
+        background-size: cover;
+        background-image: url('https://media.discordapp.net/attachments/964479986855706624/989230581466411058/9eea5ab549a15a795362a98f55fef880.jpg?width=708&height=271');
+    }
 }
 
 .overviewInfo {
     &-UpgradeFly, &-Intranet, &-E-Commerce, &-Cheapshark, &-Instagram{
+        background-position: center;
         height: 28%;
     }
 }
@@ -327,3 +332,7 @@
         }
     }
 }};
+
+@media screen and (max-width: 2048px){
+    /* 2K Responsive */
+}
