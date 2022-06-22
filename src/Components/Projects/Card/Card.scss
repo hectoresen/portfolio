@@ -9,31 +9,37 @@
     flex-direction: column;
     justify-content: space-between;
     width: 340px;
-    height: 70vh;
+    height: 75vh;
     border-radius: 40px;
     background-image: var(--bg-shape-color);
     overflow: hidden;
     &__active{
         z-index: 3;
         width: 350px;
-        height: 71vh;
+        height: 80vh;
         border-radius: 40px;
         background-image: var(--bg-shape-color);
         overflow: hidden;
         transform: scale(1.1);
         transition: width 1s;
-        margin: 2%;
+        margin: 0% 2% 0% 2%;
     }
     &__inactive1{
         z-index: 2;
         opacity: 0.8;
         transform: scale(0.99);
+        .checkoutButton{
+            display: none;
+        }
     }
     &__inactive2{
         z-index: 1;
         opacity: 0.6;
         overflow: hidden;
         transform: scale(0.95);
+        .checkoutButton{
+            display: none;
+        }
     }
 }
 
@@ -62,6 +68,12 @@
     }
 }
 
+.overviewInfo {
+    &-UpgradeFly, &-Intranet, &-E-Commerce, &-Cheapshark, &-Instagram{
+        height: 28%;
+    }
+}
+
 
 .neurobutton {
     background-image: var(--bg-shape-color);
@@ -78,7 +90,7 @@
     justify-content: space-between;
     position: relative;
     min-height: 200px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 .grouptext {
@@ -98,10 +110,10 @@
 
 /* product specifications */
 .featureIcon {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 8px;
-    margin-right: 16px;
+    margin-right: 15px;
     img{
         width: 100%;
         height: 100%;
@@ -116,9 +128,9 @@
 
     h1 {
         color: white;
-        margin-top: 10px;
-        margin-bottom: 16px;
-        font-size: 32px;
+        margin-top: 1px;
+        margin-bottom: 5px;
+        font-size: 1.4rem;
     }
 
     p {
@@ -131,7 +143,7 @@
     .productFeatures {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        margin-top: 20px;
+        margin-top: 10px;
         grid-row-gap: 16px;
 
         .feature {
@@ -144,14 +156,15 @@
 
 
 .checkoutButton {
-    border: 2px solid white;
+    border: 1.5px solid white;
     display: flex;
     width: 100%;
+    height: 12%;
     background-image: var(--bg-shape-color);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: -2px -2px 2px 0px rgba(80, 80, 80, 0.1), 2px 2px 3px 0px rgba(12, 12, 12, 0.3), inset 0px 0px 0px 2px rgba(80, 80, 80, 0.2);
-    margin-top: 30px;
+    margin-top: 8px;
     padding: 14px;
     justify-content: space-between;
     align-items: center;
@@ -261,11 +274,11 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 75vh;
+        height: 90%;
         overflow: hidden;
         &__active{
             z-index: 3;
-            width: 100vw;
+            width: 90%;
             border-radius: 20px;
             overflow: hidden;
             transition: width 1s;
@@ -280,8 +293,8 @@
     };
 
 .featureIcon {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     border-radius: 8px;
     margin-right: 16px;
 }
@@ -295,7 +308,7 @@
         color: white;
         margin-top: 1px;
         margin-bottom: 7px;
-        font-size: 30px;
+        font-size: 25px;
     }
     p {
         color: white;
@@ -306,7 +319,7 @@
     .productFeatures {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        margin-top: 20px;
+        margin-top: 15px;
         grid-row-gap: 16px;
         .feature {
             display: flex;
