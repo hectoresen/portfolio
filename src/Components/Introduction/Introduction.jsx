@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import { HackBgContext } from '../../Shared/Contexts/BgContext';
 import {Header} from '../../Components';
@@ -9,7 +9,7 @@ import './Introduction.scss';
 
 const NameHook = () => {
     const { text } = useTypewriter({
-        words: ['Hector Escolante Enriquez', 'Full Stack Developer'],
+        words: ['Hector Escolante', 'Full Stack Developer'],
         loop: 1,
         // typeSpeed: 20,
     });
