@@ -11,6 +11,7 @@ const Card = ({ projectsList }) => {
     useEffect(() => {
         setAccTotalProjects(projectCards.length);
         defaultClasses(projectCards);
+
     });
 
     let middleProjects = parseInt(projectCards.length / 2);
@@ -26,10 +27,13 @@ const Card = ({ projectsList }) => {
     }
 
     const projectsNavigateDown = () => {
+
+        /* El último elemento pasa a ser el primero */
+
+        projectCards[0].parentNode.insertBefore(projectCards[accTotalProjects -1],projectCards[1].previousSibling);
+
         projectCards[middleProjects].classList.remove('wrapper__active');
 
-        /* Último elemento pasa a ser el primero */
-        projectCards[0].parentNode.insertBefore(projectCards[0], accTotalProjects.nextSibling);
         projectCards[middleProjects].classList.add('wrapper__active');
 
         setDownClasses(middleProjects, projectCards)
