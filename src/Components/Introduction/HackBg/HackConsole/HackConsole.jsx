@@ -94,15 +94,15 @@ const HackConsole = () => {
                                     >
                                 </input>
             </div>
-            {
-                (helpConsoleInput && <p><small>Pulsa la tecla ENTER</small></p>)
-            }
-            {
-                (helpConsoleInput === undefined && <p><small>No hemos encontrado nada</small></p>)
-            }
-
-            <div className='hackconsole__portfolio'>
-            </div>
+                <div className='hackconsole__warnings'>
+                    {
+                        (helpConsoleInput && <p><small><T id="Hackconsole.pressEnter" /></small></p>)
+                    }
+                    {
+                        (helpConsoleInput === undefined && <p><small><T id="Hackconsole.notFound" /></small></p>)
+                    }
+                </div>
+            <div className='hackconsole__portfolio'></div>
         </div>
     )
 }

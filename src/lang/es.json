@@ -17,6 +17,8 @@
     "Hackconsole.error": "Ha habido un conflicto y la aplicación ha entrado en modo seguro",
     "Hackconsole.lookingdeveloper": "¿Estás buscando un buen desarrollador?",
     "Hackconsole.useconsole" : "Utiliza la consola para navegar a través de mi portfolio. Puedes salir del modo seguro pulsando",
-    "Hackconsole.trytyping": "Puedes probar escribiendo "
+    "Hackconsole.trytyping": "Puedes probar escribiendo ",
+    "Hackconsole.pressEnter" : "Pulsa la tecla intro",
+    "Hackconsole.notFound" : "No hemos encontrado nada"
 
 }

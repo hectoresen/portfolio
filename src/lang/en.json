@@ -16,5 +16,7 @@
     "Hackconsole.error": "There has been a conflict and the application has entered safe mode",
     "Hackconsole.lookingdeveloper": "Are you looking for a good developer?",
     "Hackconsole.useconsole" : "Use the console to navigate through the portfolio. You can exit this by pressing",
-    "Hackconsole.trytyping": "You can try typing "
+    "Hackconsole.trytyping": "You can try typing ",
+    "Hackconsole.pressEnter" : "Press enter key",
+    "Hackconsole.notFound" : "We haven't found anything"
 }
