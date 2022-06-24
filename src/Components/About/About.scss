@@ -93,7 +93,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 1.4rem;
+        font-size: 1.1rem;
         width: 100vw;
         height: 100%;
         &-abouticon{
@@ -121,5 +121,14 @@
 @media screen and (max-width: 480px){
     .about__container{
         font-size: 0.9rem;
+    }
+    .about__techcontainer{
+        font-size: 0.8rem;
+        &-abouticon{
+            margin-left: 1%;
+            &-icon{
+                font-size: 1.6rem;
+            }
+        }
     }
 };

@@ -275,19 +275,44 @@
 
 
 @media screen and (max-width: 480px){
+    .projects__nav div{
+        width: 3rem;
+        height: 3rem;
+        left: 0.5%;
+    }
+
+    .prev::before, .prev::after, .next::before, .next::after {
+        content: '';
+        position: absolute;
+        left: 43%;
+        background: #fff;
+        width: .3rem;
+        min-width: 3px;
+        border-radius: 2px;
+    }
+    .prev:hover, .next:hover {
+        box-shadow: 0 0 0 0.4rem orange;
+    }
+
+    .projects__nav div:last-of-type {
+        left: auto;
+        right: 0.5%;
+    }
+
+
     .wrapper {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 90%;
+        height: 83%;
         overflow: hidden;
         &__active{
+            width: 80%;
             z-index: 3;
-            width: 90%;
             border-radius: 20px;
             overflow: hidden;
             transition: width 1s;
-            margin: 2%;
+            margin: 0%;
         }
         &__inactive1{
             display: none;
