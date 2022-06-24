@@ -9,7 +9,6 @@ const ConsoleHook = () => {
     const { text } = useTypewriter({
         words: ['CV', 'ABOUT', 'PROJECTS'],
         loop: 6,
-        // typeSpeed: 20,
     });
     return (
         <div className='introduction__name'>
@@ -19,24 +18,15 @@ const ConsoleHook = () => {
 };
 
 const HackConsole = () => {
-    const [consoleValue, setConsoleValue] = useState('');
     const [{activeHackBg}, toggleHackBg] = useContext(HackBgContext);
+    const [helpConsoleInput, setHelpConsoleInput] = useState(false);
+    const [consoleData, setConsoleData] = useState('');
 
     const items = [
         {id: 1, name: 'cv'},
         {id: 2, name: 'about'},
         {id: 3, name: 'projects'}
     ]
-
-    useEffect(() =>{
-        const consoleInput = document.getElementById('hackconsole__input');
-        consoleInput.addEventListener('keypress', function(event) {
-            if(event.key === 'Enter'){
-                event.preventDefault();
-                setConsoleValue(consoleInput.value);
-            }
-        })
-    });
 
     useEffect(() =>{
         document.onkeydown = function(event){
@@ -46,14 +36,27 @@ const HackConsole = () => {
         }
     });
 
-    const closeHackConsole = (ev) => {
+    const closeHackConsole = () => {
         setTimeout(() =>{
             toggleHackBg()
         },1000)
     };
 
-    const getHackPortfolio = () =>{
-        const getItem = items.find(element => element.name.toLowerCase() === consoleValue.toLowerCase());
+    const handleInput = (ev) =>{
+        const {value} = ev.target;
+        let lowerValue = value.toLowerCase();
+        setConsoleData(lowerValue)
+        if(items.find(element => element.name.toLowerCase() === lowerValue)){
+            setHelpConsoleInput(true)
+        }else{
+            setHelpConsoleInput(false)
+        }
+    };
+
+
+    const submitConsole = () =>{
+        const getItem = items.find(element => element.name.toLowerCase() === consoleData);
+        console.log(getItem);
 
         if(getItem){
             if(getItem.name === 'about'){
@@ -67,12 +70,12 @@ const HackConsole = () => {
                 return document.getElementById('projects').scrollIntoView({behavior: 'smooth'});
             }
         }else{
-            return;
+            setHelpConsoleInput(getItem)
         }
     }
 
     return (
-        <div className='hackconsole'>
+        <div className={(helpConsoleInput === undefined) ? 'hackconsole error' : 'hackconsole'}>
             <div className='hackconsole__header'>
                 <p><T id="Hackconsole.trytyping" />&nbsp;</p>
                 <ConsoleHook />
@@ -81,13 +84,24 @@ const HackConsole = () => {
                 <p><Cursor /></p><input
                                     className='hackconsole__input'
                                     id='hackconsole__input'
+                                    onChange={handleInput}
+                                    onKeyPress={event => {
+                                        if(event.key === 'Enter'){
+                                            submitConsole();
+                                        }
+                                    }}
                                     autoFocus
                                     >
                                 </input>
             </div>
-            {/* <p><small>Pulsa la tecla ENTER</small></p> */}
+            {
+                (helpConsoleInput && <p><small>Pulsa la tecla ENTER</small></p>)
+            }
+            {
+                (helpConsoleInput === undefined && <p><small>No hemos encontrado nada</small></p>)
+            }
+
             <div className='hackconsole__portfolio'>
-                {getHackPortfolio()}
             </div>
         </div>
     )
